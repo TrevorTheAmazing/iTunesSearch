@@ -6,13 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <h1>TEST!</h1>
-    <p id="test">test</p>
-    <script src="scripts/main.js"></script>
+    <header>
+        <h1>iTunes Search!</h1>
+    </header>
+
+    <div id="container">
+        <div id="result"></div>
+        <ul id="users"></ul>
+    </div>
+    <!-- <script src="scripts/main.js"></script> -->
+    <script>
+        $(document).ready(function () {
+            // read from another file
+            // $('#result').load("test.html", function (responseText, statusText, xhr) {
+            //     if (statusText == "success") {
+            //         alert("it was ok");
+            //     }
+            //     else if (statusText == "error") {
+            //         alert("3rr0r: " + xhr.statusText);
+            //     }
+            // });
+
+            //GET method
+            // $.get("test.html", function (data) {
+            //     $("#result").html(data);
+            // })
+
+            // GET json from local file
+            // $.getJSON("users.json", function (data) {
+            //     $.each(data, function (i, user) {
+            //         $("ul#users").append("<li>" + user.firstName + "</li>");
+            //     });
+
+            //AJAX method
+
+        });
+        });
+    </script>
 </body>
 
 </html>
