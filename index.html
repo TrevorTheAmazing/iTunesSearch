@@ -13,12 +13,20 @@
 
 <body>
     <header>
-        <h1>iTunes Search!</h1>
+        <h1>iTunes Search</h1>
     </header>
 
     <div id="container">
         <div id="result"></div>
         <ul id="users"></ul>
+        <h3>Add Post</h3>
+        <form id="postForm" action="https://jsonplaceholder.typicode.com/posts">
+            <input type="text" id="title" placeholder="Title"><br>
+            <textarea id="title" placeholder="Body">
+
+            </textarea><br>
+            <input type="submit" value="Submit">
+        </form>
     </div>
     <!-- <script src="scripts/main.js"></script> -->
     <script>
@@ -43,11 +51,40 @@
             //     $.each(data, function (i, user) {
             //         $("ul#users").append("<li>" + user.firstName + "</li>");
             //     });
+            //});
+
 
             //AJAX method
+            // $.ajax({
+            //     method: 'GET',
+            //     url: 'https://jsonplaceholder.typicode.com/posts',
+            //     dataType: 'json'
+            // }).done(function (data) {
+            //     //log it in the console
+            //     //console.log(data);
 
-        });
-        });
+            //     //display it in the browser
+            //      $.map(data, function (post, i) {
+            //          $('#result').append('<h3>' + post.title + '</h3><p>' + post.body + '</p>');
+            //     });
+            // });
+
+            //make a POST request
+            $('#postForm').submit(function (e) {
+                e.preventDefault();
+
+                var title = $('#title').val();
+                var body = $('#body').val();
+                var url = $(this).attr('action');
+
+                $.post(url, { title: title, body: body }).
+                    done(function (data) {
+                        console.log('Post Saved');
+                        console.log(data);
+                    });
+
+            });
+        });        
     </script>
 </body>
 
